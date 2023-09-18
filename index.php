@@ -8,6 +8,7 @@
 </head>
 
 <body>
+    <h2>hola</h2>
     <?php
     $titulo = "Hola Mundo ";
     echo "<h1>" . $titulo . "</h1>";
