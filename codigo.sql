@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3305
--- Tiempo de generación: 25-09-2023 a las 03:53:19
+-- Tiempo de generación: 25-09-2023 a las 03:59:04
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -30,11 +30,22 @@ SET time_zone = "+00:00";
 CREATE TABLE `socios` (
   `id_socio` int(9) NOT NULL,
   `nombre_socio` varchar(25) NOT NULL,
-  `apellido_socio` int(25) NOT NULL,
+  `apellido_socio` varchar(25) NOT NULL,
   `telefono_socio` int(11) NOT NULL,
   `email_socio` varchar(50) NOT NULL,
   `fecha_adhesion` date NOT NULL,
   `tipo_subscripcion` varchar(12) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `subscripciones`
+--
+
+CREATE TABLE `subscripciones` (
+  `tipo_subscripcion_id` varchar(12) NOT NULL,
+  `nombre_subscripcion` varchar(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -47,6 +58,13 @@ CREATE TABLE `socios` (
 ALTER TABLE `socios`
   ADD PRIMARY KEY (`id_socio`),
   ADD KEY `tipo_subscripcion` (`tipo_subscripcion`);
+
+--
+-- Indices de la tabla `subscripciones`
+--
+ALTER TABLE `subscripciones`
+  ADD PRIMARY KEY (`tipo_subscripcion_id`),
+  ADD KEY `tipo_subscripcion_id` (`tipo_subscripcion_id`);
 
 --
 -- Restricciones para tablas volcadas
@@ -62,3 +80,4 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
