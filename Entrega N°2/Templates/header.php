@@ -11,7 +11,7 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-light justify-content-center">
+        <nav class="navbar navbar-expand-lg bg-dark justify-content-center">
             <ul class="nav nav-underline">
                 <li class="nav-item">
                     <a class="nav-link" href="inicio">inicio</a>

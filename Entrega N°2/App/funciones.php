@@ -2,6 +2,7 @@
 require_once 'db.php';
 
 function home(){
+    require_once 'templates/header.php';
     require_once 'templates/form.php';
 }
 
