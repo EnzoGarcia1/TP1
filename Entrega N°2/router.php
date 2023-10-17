@@ -3,7 +3,7 @@ require_once './.controller/auth.controller.php';
 require_once './.controller/page.controller.php';
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' .$_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
-$action = 'inicio';
+$action = 'miPerfil';
 if (!empty ($_GET['action'])){
     $action = $_GET['action'];
 };
@@ -19,9 +19,17 @@ switch($params[0]){
         $controller = new authController();
         $controller -> registrar();
         break;
-    case 'inicio':
-        $controller = new pageController();
+    case 'inicioSesion':
+        $controller = new authController();
         $controller -> mostrarInicio();
+        break;
+    case 'iniciar':
+        $controller = new authController();
+        $controller -> iniciarSesion();
+        break;
+    case 'cerrarSesion':
+        $controller = new authController();
+        $controller -> cerrarSesion();
         break;
     case 'miPerfil':
         $controller = new pageController();

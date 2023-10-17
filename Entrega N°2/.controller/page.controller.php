@@ -11,20 +11,19 @@ class pageController {
         $this->model = new pageModel();
         $this->view = new pageView();
     }
-
-    function mostrarInicio(){
-        $this->view->mostrarInicio();
-    }
     
     function mostrarMiPerfil(){
+        $this->model->verificar();
         $this->view->mostrarMiPerfil();
     }
     
     function mostrarVerSuscripciones(){
+        $this->model->verificar();
         $this->view->mostrarVerSuscripciones();
     }
     
     function MostrarSuscribirse(){
+        $this->model->verificar();
         $this->view->MostrarSuscribirse();
     }
 }

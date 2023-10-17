@@ -2,10 +2,14 @@
 
 class authView{
     
-    function MostrarRegistro(){
-        require_once 'templates/header.phtml';
+    function MostrarRegistro($error = null){
         require './Templates/registro.phtml';
         
     }
+
+    function mostrarInicio($error = null){
+        require './Templates/inicio.phtml';
+    }
+
 }
 ?>

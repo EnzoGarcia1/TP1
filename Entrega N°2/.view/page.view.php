@@ -2,14 +2,13 @@
 
 class pageView{
     
-    function mostrarInicio(){
-        require_once 'templates/header.phtml';
+    function mostrarInicio($error = null){
         require 'templates/inicio.phtml';
     }
     
     function mostrarMiPerfil(){
         require_once 'templates/header.phtml';
-        echo 'miPerfil';
+        echo 'hola '  . $_SESSION['USER_NOMBRE'];
     }
     
     function mostrarVerSuscripciones(){

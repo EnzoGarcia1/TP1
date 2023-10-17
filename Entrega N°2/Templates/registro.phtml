@@ -1,7 +1,28 @@
-<form action="registrar" method="POST">
-    <input type="text" name="nombre" placeholder="ingrese su nombre" require>
-    <input type="email" name="email-registro" placeholder="Ingrese su Email" require>
-    <input type="password" name="contraseña-registro" placeholder="Ingrese su contraseña" require>
-    <input type="number" name="suscripcion" placeholder="ingrese si tipo de suscripocion" require>
-    <button type="submit">registrar</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <base href="<?php echo BASE_URL ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>TPE entrega 2</title>
+</head>
+
+<body>
+    <h1>Regristro</h1>
+    <form action="registrar" method="POST" class="mx-5">
+    <label class="form-label">ingrese su nombre</label>
+        <input type="text" class="form-control" name="nombre-registro" require>
+        <label class="form-label">Ingrese su Email</label>
+        <input type="email" class="form-control" name="email-registro" require>
+        <label class="form-label">Ingrese su contraseña</label>
+        <input type="password" class="form-control" name="contraseña-registro" require>
+        <label class="form-label">ingrese su tipo de subscripcion</label>
+        <input type="number" class="form-control" name="subscripcion-registro" require>
+        <button type="submit">registrar</button>
+    </form>
+    <?php if($error):?>
+        <h2><?= $error ?></h2>
+    <?php endif ?>
+    <h2><a href="inicioSesion">volver a inicio</a></h2>
