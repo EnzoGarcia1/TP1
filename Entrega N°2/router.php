@@ -43,8 +43,11 @@ switch($params[0]){
         $controller = new pageController();
         $controller -> MostrarSuscribirse();
         break;
+    case 'subscripciones':
+    $controller = new SubscripcionesController();
+    $controller->ShowSubs();
     default;
-    echo 'erro404';
+    echo 'error404';
 }
 
 ?>
