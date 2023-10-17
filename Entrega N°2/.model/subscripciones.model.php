@@ -18,4 +18,13 @@ class subscripcionesModel
 
         return $subscripciones;
     }
+
+    public function verificar(){
+        session_start();
+        if (!isset($_SESSION['USER_ID'])) {
+            header('Location: ' . BASE_URL . 'inicioSesion');
+            die();
+        }
+    }
+    
 }

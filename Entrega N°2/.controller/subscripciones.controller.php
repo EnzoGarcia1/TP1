@@ -3,7 +3,7 @@ include_once './.model/subscripciones.model.php';
 include_once './.view/subscripciones.view.php';
 
 
-class subscripcionesCsontroller
+class subscripcionesController
 {
 
     private $model;
@@ -20,6 +20,7 @@ class subscripcionesCsontroller
         //obtengo las subscripciones del modelo
         $subscripciones = $this->model->getSubs();
         //actualizo la vista
+        $this->model->verificar();
         $this->view->ShowSubs($subscripciones);
     }
 }
