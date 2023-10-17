@@ -1,5 +1,5 @@
 <?php
-class SubscripcionesModel
+class subscripcionesModel
 {
 
     private $db;

@@ -1,9 +1,9 @@
-s<?php
-include_once 'app/model/subscripcionesModel.php';
-include_once 'app/view/subscripcionesView.php';
+<?php
+include_once './.model/subscripciones.model.php';
+include_once './.view/subscripciones.view.php';
 
 
-class SubscripcionesController
+class subscripcionesCsontroller
 {
 
     private $model;
@@ -11,13 +11,12 @@ class SubscripcionesController
 
     function __construct()
     {
-        $this->model = new SubscripcionesModel();
-        $this->view = new SubscripcionesView();
+        $this->model = new subscripcionesModel();
+        $this->view = new subscripcionesView();
     }
 
     function ShowSubs()
     {
-
         //obtengo las subscripciones del modelo
         $subscripciones = $this->model->getSubs();
         //actualizo la vista

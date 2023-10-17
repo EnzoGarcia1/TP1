@@ -1,6 +1,6 @@
 <?php
 
-class SubscripcionesView
+class subscripcionesView
 {
     function ShowSubs($subscripciones)
     {

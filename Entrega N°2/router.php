@@ -1,6 +1,7 @@
 <?php
 require_once './.controller/auth.controller.php';
 require_once './.controller/page.controller.php';
+require_once './.controller/subscripciones.controller.php';
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' .$_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
 $action = 'miPerfil';
@@ -36,16 +37,13 @@ switch($params[0]){
         $controller -> mostrarMiPerfil();
         break;
     case 'verSuscripciones':
-        $controller = new pageController();
-        $controller -> mostrarVerSuscripciones();
-        break;
-    case 'suscribirse':
-        $controller = new pageController();
-        $controller -> MostrarSuscribirse();
+        $controller = new subscripcionesController();
+        $controller->ShowSubs();
         break;
     case 'subscripciones':
-    $controller = new SubscripcionesController();
-    $controller->ShowSubs();
+        $controller = new subscripcionesController();
+        $controller->ShowSubs();
+        break;
     default;
     echo 'error404';
 }

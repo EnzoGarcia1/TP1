@@ -21,9 +21,4 @@ class pageController {
         $this->model->verificar();
         $this->view->mostrarVerSuscripciones();
     }
-    
-    function MostrarSuscribirse(){
-        $this->model->verificar();
-        $this->view->MostrarSuscribirse();
-    }
 }
