@@ -1,0 +1,29 @@
+<?php
+include_once 'Templates/header.phtml';
+
+echo "<table class='table'>
+<thead>
+  <tr>
+    <th scope='col'>tipo_subscripcion_id</th>
+    <th scope='col'>nombre_subscripcion</th>
+    <th scope='col'>caracteristicas</th>
+    <th scope='col'>precio</th>
+    <th scope='col'>duracion</th>
+  </tr>
+</thead>
+<tbody>";
+
+foreach ($subscripciones as $subscripcion) {
+    echo "
+    <tr>
+      <th scope='row'>$subscripcion->tipo_subscripcion_id</th>
+      <td>$subscripcion->nombre_subscripcion</td>
+      <td>$subscripcion->caracteristicas</td>
+      <td>$subscripcion->precio</td>
+      <td>$subscripcion->duracion</td>
+    </tr>";
+}
+
+echo "</tbody></table>";
+include_once 'Templates/footer.phtml';
+?>
