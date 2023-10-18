@@ -1,0 +1,12 @@
+<form action="eliminarSub" method="POST" class="mb-3">
+    <label class="form-label">Producto</label>
+    <select name="subscripcion" class="form-select">
+        <?php foreach ($subscripciones as $subscripcion) { ?>
+            <option value="<?= $subscripcion->subscripcion ?>">
+            <?= $subscripcion->subscripcion;
+        } ?></option>
+    </select>
+    <input type="submit" class="btn btn-primary">
+</form>
+
+<a class="btn btn-primary" href="volver">Volver</a>

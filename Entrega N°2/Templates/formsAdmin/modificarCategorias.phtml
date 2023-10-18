@@ -1,0 +1,11 @@
+<ul class="">
+    <?php foreach ($categorias as $categoria) {
+    ?> <li class="nav-item p-2 "><?= $categoria->tipo ?></li>
+        <form action="modificar/<?= $categoria->id ?>" method="post">
+            <input type="text" name="categoria">
+            <input type="submit">
+        </form>
+    <?php
+    }
+    ?>
+</ul>
