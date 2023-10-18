@@ -44,6 +44,47 @@ switch($params[0]){
     $controller = new subscripcionesController();
     $controller->ShowSubs();
     break;
+
+         ////
+
+
+    case 'administracion':
+        $controllerAdmin->verificarLogeadoYShowPropiedadesDelAdministrador();
+        break;
+    case 'modificarSubs':
+        $controllerAdmin->modificarSubs($params[1]);
+        break;
+    case 'eliminarSubs':
+        $controllerAdmin->eliminarSubs();
+        break;
+    case 'agregar':
+        $controllerAdmin->agregarDatos();
+        break;
+    case 'eliminar':
+        $controllerAdmin->eliminarDatos();
+        break;
+    case 'modificar':
+        $controllerAdmin->modificarDatos();
+        break;
+    case 'volver':
+        $controllerAdmin->volver();
+        break;
+    case 'agregarCategoria':
+        $controllerAdmin->agregarCategorias();
+        break;
+    case 'agregarTipoDeCategoria':
+        $controllerAdmin->agregarTipoDeCategorias();
+        break;
+    case 'eliminarTipoDeCategoria':
+        $controllerAdmin->eliminarCategorias();
+        break;
+    case 'modificarCategorias':
+        $controllerAdmin->modificarCategorias();
+        break;
+    case 'modificar':
+        $controllerAdmin->modificarCategorias($params[1]);
+        break;
+    
     default;
     echo 'error404';
 }
