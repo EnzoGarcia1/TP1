@@ -19,7 +19,13 @@
         <label class="form-label">Ingrese su contraseña</label>
         <input type="password" class="form-control" name="contraseña-registro" require>
         <label class="form-label">ingrese su tipo de subscripcion</label>
-        <input type="number" class="form-control" name="subscripcion-registro" require>
+        <select name="subscripcion-registro" class="form-control">
+            <option value="1">FAN</option>
+            <option value="2">SUPER FAN</option>
+            <option value="3">MEGA FAN</option>
+            <option value="4">BOSTERO</option>
+            <option value="5">MEGA BOSTERO</option>
+        </select>
         <button type="submit">registrar</button>
     </form>
     <?php if($error):?>

@@ -1,29 +1,22 @@
-<?php
-include_once 'Templates/header.phtml';
+<?php include_once 'Templates/header.phtml';?>
 
-echo "<table class='table'>
+<table class='table'>
 <thead>
   <tr>
-    <th scope='col'>tipo_subscripcion_id</th>
-    <th scope='col'>nombre_subscripcion</th>
-    <th scope='col'>caracteristicas</th>
-    <th scope='col'>precio</th>
-    <th scope='col'>duracion</th>
+    <th scope='col'>SUSCRIPCION</th>
+    <th scope='col'>BENEFICIOS</th>
+    <th scope='col'>PRECIO</th>
+    <th scope='col'>DURACION(AÑOS)</th>
   </tr>
 </thead>
-<tbody>";
-
-foreach ($subscripciones as $subscripcion) {
-    echo "
+<tbody>
+<?php
+foreach ($subscripciones as $subscripcion):?>
     <tr>
-      <th scope='row'>$subscripcion->tipo_subscripcion_id</th>
-      <td>$subscripcion->nombre_subscripcion</td>
-      <td>$subscripcion->caracteristicas</td>
-      <td>$subscripcion->precio</td>
-      <td>$subscripcion->duracion</td>
-    </tr>";
-}
-
-echo "</tbody></table>";
-require_once 'Templates/footer.phtml';
-?>
+      <td> <?php echo $subscripcion->nombre_subscripcion ?></td>
+      <td> <?php echo $subscripcion->caracteristicas ?></td>
+      <td> <?php echo $subscripcion->precio ?> $USD</td>
+      <td> <?php echo $subscripcion->duracion ?></td>
+    </tr>
+    <?php endforeach ?>
+    </tbody></table>

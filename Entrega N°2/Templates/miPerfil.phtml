@@ -1,0 +1,16 @@
+<?php require_once './templates/header.phtml';?>
+
+<h1>BIENVENIDO DE VUELTA <?php echo strtoupper($_SESSION['USER_NOMBRE']) ?></h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Tu EMAIL es: <?php echo ($_SESSION['USER_EMAIL']) ?></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Tu Nombre es: <?php echo ($_SESSION['USER_NOMBRE'])?></th>
+    </tr>
+  </tbody>
+</table>

@@ -41,11 +41,11 @@ switch($params[0]){
         $controller->ShowSubs();
         break;
     case 'subscripciones':
-    $controller = new subscripcionesController();
-    $controller->ShowSubs();
-    break;
+        $controller = new subscripcionesController();
+        $controller->ShowSubs();
+        break;
     default;
-    echo 'error404';
+        echo 'error404';
 }
 
 ?>

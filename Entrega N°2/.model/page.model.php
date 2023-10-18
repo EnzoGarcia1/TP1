@@ -5,7 +5,7 @@ class pageModel{
 
     function __construct()
     {
-        $this->db = new PDO('mysql:host=localhost;dbname=socios;charset=UTF8', 'root', '');
+        $this->db = new PDO('mysql:host=localhost; dbname=socios; charset=UTF8', 'root', '');
     }
 
     public function verificar(){

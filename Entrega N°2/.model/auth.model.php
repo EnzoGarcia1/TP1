@@ -9,7 +9,7 @@ class authModel{
     }
 
     public function guardarUsuario($nombre,$email,$contraseña,$sus){
-        $query = $this->db->prepare('INSERT INTO socios (nombre_socio,email_socio, contraseña_socio, tipo_subscripcion) VALUES (? ,?, ?, ?)');
+        $query = $this->db->prepare('INSERT INTO socios (nombre_socio, email_socio, contraseña_socio, tipo_subscripcion) VALUES (? ,?, ?, ?)');
         $query->execute([$nombre,$email,$contraseña,$sus]);
     }
 
@@ -26,7 +26,8 @@ class authModel{
         $_SESSION['USER_NOMBRE'] = $user->nombre_socio;
         $_SESSION['USER_ID'] = $user->id_socio;
         $_SESSION['USER_EMAIL'] = $user->email_socio;
-        $_SESSION['USER_SUBSCRIPCION'] = $user->tipo_subscripcion;
+        $_SESSION['USER_CONTRASEÑA'] = $user->contraseña_socio;
+
 
     }
 

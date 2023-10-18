@@ -3,7 +3,7 @@
 class subscripcionesView
 {
     function ShowSubs($subscripciones)
-    {
-        include 'Templates/subsList.phtml';
+    { 
+        require_once 'Templates/subsList.phtml';
     }
 }
