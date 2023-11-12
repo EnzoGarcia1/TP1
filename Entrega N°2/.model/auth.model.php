@@ -1,20 +1,21 @@
 <?php
-
+require_once 'config.php';
 class authModel{
-    private $db;
 
-    function __construct()
+    protected $db;
+
+    public function __construct()
     {
-        $this->db = new PDO('mysql:host=localhost;dbname=socios;charset=UTF8', 'root', '');
+        $this->db = new PDO("mysql:host=".MYSQL_HOST.";dbname=".MYSQL_DB.";charset=utf8",MYSQL_USER, MYSQL_PASS);
     }
 
-    public function guardarUsuario($nombre,$email,$contraseña,$sus){
-        $query = $this->db->prepare('INSERT INTO socios (nombre_socio, email_socio, contraseña_socio, tipo_subscripcion) VALUES (? ,?, ?, ?)');
-        $query->execute([$nombre,$email,$contraseña,$sus]);
+    public function guardarUsuario($nombre,$email,$contraseña,$subscripcion){
+        $query = $this->db->prepare('INSERT INTO usuarios (nombre, email, contraseña, suscripcion) VALUES (? ,?, ?, ?)');
+        $query->execute([$nombre,$email,$contraseña,$subscripcion]);
     }
 
     public function obtenerEmail($email){
-            $query = $this->db->prepare('SELECT * FROM socios WHERE email_socio = ?');
+            $query = $this->db->prepare('SELECT * FROM usuarios WHERE email = ?');
             $query->execute([$email]);
     
             $user = $query->fetch(PDO::FETCH_OBJ);
@@ -23,12 +24,10 @@ class authModel{
 
     public function iniciarSesion($user){
         session_start();
-        $_SESSION['USER_NOMBRE'] = $user->nombre_socio;
-        $_SESSION['USER_ID'] = $user->id_socio;
-        $_SESSION['USER_EMAIL'] = $user->email_socio;
-        $_SESSION['USER_CONTRASEÑA'] = $user->contraseña_socio;
-
-
+        $_SESSION['USER_NOMBRE'] = $user->nombre;
+        $_SESSION['USER_ID'] = $user->ID;
+        $_SESSION['USER_EMAIL'] = $user->email;
+        $_SESSION['USER_SUSCRIPCION'] = $user->suscripcion;
     }
 
     public function verificar(){

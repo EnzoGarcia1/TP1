@@ -24,8 +24,8 @@ class authController {
         if(!empty ($_POST['nombre-registro']) && !empty($_POST['email-registro']) && !empty($_POST['contraseña-registro']) && !empty($_POST['subscripcion-registro'])){
             $nombre = $_POST['nombre-registro'];
             $email = $_POST['email-registro'];
-            $subscripcion = $_POST['subscripcion-registro'];
             $contraseña = password_hash($_POST['contraseña-registro'], PASSWORD_BCRYPT);
+            $subscripcion = $_POST['subscripcion-registro'];
             $this->model->guardarUsuario($nombre,$email,$contraseña,$subscripcion);
             header('Location: ' . BASE_URL);
         }
@@ -43,7 +43,7 @@ class authController {
             return;
         }
         $user = $this->model->obtenerEmail($email);
-        if ($user && (password_verify($password, $user->contraseña_socio))) {
+        if ($user && (password_verify($password, $user->contraseña))) {
             $this->model->iniciarSesion($user);
             header('Location: ' . BASE_URL);
         } else {

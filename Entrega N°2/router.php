@@ -2,7 +2,6 @@
 require_once './.controller/auth.controller.php';
 require_once './.controller/page.controller.php';
 require_once './.controller/subscripciones.controller.php';
-require_once './.controller/admin.controller.php';
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' .$_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
 $action = 'miPerfil';
@@ -37,50 +36,46 @@ switch($params[0]){
         $controller = new pageController();
         $controller -> mostrarMiPerfil();
         break;
+    case 'cambiarNombre':
+        $controller = new pageController();
+        $controller -> cambiarNombre();
+        break;
     case 'verSuscripciones':
         $controller = new subscripcionesController();
         $controller->ShowSubs();
         break;
-    case 'subscripciones':
+    case 'eliminarSub':
         $controller = new subscripcionesController();
-        $controller->ShowSubs();
+        $controller->eliminarSub();
         break;
-
-    //
-    case 'administracion':
-        $controller = new adminController();
-        $controller->mostrarAdmin();
+    case 'agregarSub':
+        $controller = new subscripcionesController();
+        $controller->agregarSub();
         break;
-    case 'eliminarCategoria':
-        $controller = new adminController();
-        $controller->eliminarCategoria($params[1]);
+    case 'filtro':
+        $controller = new subscripcionesController();
+        $controller->filtrar();
         break;
-    case 'editarCategoria':
-        $controller = new adminController();
-        $controller->editarCategoria($params[1]);
+    case 'verSocios':
+        $controller = new pageController();
+        $controller->mostrarSocios();
         break;
-    case 'agregarCategoria':
-        $controller = new adminController();
-        $controller->agregarCategoria();
+    case 'eliminarSocio':
+        $controller = new pageController();
+        $controller->eliminarSocio();
         break;
-    case 'agregarItem':
-        $controller = new adminController();
-        $controller->agregarItem();
+    case 'hacerAdmin':
+        $controller = new pageController();
+        $controller->hacerAdmin();
         break;
-    case 'eliminarItem':
-        $controller = new adminController();
-        $controller->eliminarItem($params[1]);
+    case 'quitarAdmin':
+        $controller = new pageController();
+        $controller->quitarAdmin();
         break;
-    case 'mostrarEditarItem':
-        $controller = new adminController();
-        $controller->mostrarFormEditar($params[1]);
-        break;
-    case 'editarItem':
-        $controller = new adminController();
-        $controller->editarItem($params[1]);
+    case 'verNoticias':
+        $controller = new pageController();
+        $controller->mostrarNoticias();
         break;
     default;
         echo 'error404';
 }
-
-?>

@@ -2,7 +2,7 @@
 
 class subscripcionesView
 {
-    function ShowSubs($subscripciones)
+    function ShowSubs($subscripciones,$esAdmin)
     { 
         require_once 'Templates/subsList.phtml';
     }
