@@ -6,4 +6,8 @@ class subscripcionesView
     { 
         require_once 'Templates/subsList.phtml';
     }
+
+    function showError($mensaje)
+    {
+    }
 }
