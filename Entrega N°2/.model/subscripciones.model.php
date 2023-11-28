@@ -58,4 +58,11 @@ class subscripcionesModel
         $querry = $this->db->prepare('DELETE FROM subscripciones WHERE ID_subscripcion = ?');
         $querry->execute([$id]);
     }
+
+    
+    function modificarSub($id, $tipo, $caracteristicas, $precio, $duracion)
+    {
+        $query = $this->db->prepare('UPDATE subscripciones SET tipo = ?, caracteristicas = ?, precio = ?, duracion = ? WHERE id = ?');
+        $query->execute([$tipo, $caracteristicas, $precio, $duracion]);
+    }
 }
