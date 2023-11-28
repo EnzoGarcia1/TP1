@@ -73,4 +73,22 @@ class subscripcionesController
             $this->model->borrarSub($id);
             header('Location: ' . BASE_URL . 'verSuscripciones');
         }
+
+    function modificarSub($id)
+    {
+        $this->model->verificar();
+
+        if (isset($_POST['tipo']) && isset($_POST['caracteristicas']) && isset($_POST['precio']) && isset($_POST['duracion'])) {
+            $tipo = $_POST['nombre'];
+            $caracteristicas = $_POST['caracteristicas'];
+            $precio = $_POST['precio'];
+            $duracion = $_POST['duracion'];
+
+            $this->model->modificarSub($id, $tipo, $caracteristicas, $precio, $duracion);
+
+            header("Location: " . BASE_URL);
+        } else {
+            $this->view->showError("Debe completar todos los datos solicitados");
+        }
+    }
 }
